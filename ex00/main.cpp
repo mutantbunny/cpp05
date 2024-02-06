@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:56:00 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/06 01:46:33 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/06 03:02:39 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Failed to create Bureaucrat named Maria with grade 1."
+		std::cerr << "Failed to copy unnamed bureaucrat grade to Maria."
 			<< std::endl;
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
