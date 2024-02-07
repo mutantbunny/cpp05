@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 02:01:34 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/06 03:17:27 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:35:33 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,8 +132,7 @@ std::ostream &operator<<(std::ostream &out, const Form &form)
 		out << "form is not signed";
 
 	out << ", grade required to sign: " << form.getGradeToSign()
-		<< ", grade required to execute: " << form.getGradeToExecute()
-		<< '.' << std::endl;
+		<< ", grade required to execute: " << form.getGradeToExecute() << '.';
 
 	return out;
 }
