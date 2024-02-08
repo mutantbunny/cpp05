@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 00:50:18 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 02:32:44 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:20:29 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm &operator=(PresidentialPardonForm &src);
 
 		virtual void execute(Bureaucrat const &executor) const;
+
+		static const int MIN_SIGN_GRADE = 25;
+		static const int MIN_EXEC_GRADE = 5;
 };
 
 #endif

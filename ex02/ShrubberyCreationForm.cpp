@@ -6,17 +6,19 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 03:00:09 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 03:46:35 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:23:28 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
-	AForm("ShrubberyCreationForm", "Unknown target", 145, 137, false) { }
+	AForm("ShrubberyCreationForm", "Unknown target",
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false) { }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
-	AForm("ShrubberyCreationForm", target, 145, 137, false) { }
+	AForm("ShrubberyCreationForm", target,
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false) { }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &src)
 	: AForm("ShrubberyCreationForm", src.getTarget(), src.getGradeToSign(),
@@ -47,7 +49,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw AForm::FormNotSignedException();
 
 	std::string filename(getTarget() + "_shrubbery");
-	std::ofstream target_file(filename);
+	std::ofstream target_file(filename.c_str());
 
 	target_file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 

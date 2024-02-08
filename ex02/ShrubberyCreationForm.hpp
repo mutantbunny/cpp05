@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 00:50:18 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 03:04:12 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:22:18 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm &src);
 
 		virtual void execute(Bureaucrat const &executor) const;
+
+		static const int MIN_SIGN_GRADE = 145;
+		static const int MIN_EXEC_GRADE = 137;
 };
 
 #endif

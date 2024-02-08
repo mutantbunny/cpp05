@@ -6,17 +6,19 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 01:21:01 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 03:46:13 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:18:23 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void) :
-	AForm("PresidentialPardonForm", "Unknown target", 25, 5, false) { }
+	AForm("PresidentialPardonForm", "Unknown target",
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false) { }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-	AForm("PresidentialPardonForm", target, 25, 5, false) { }
+	AForm("PresidentialPardonForm", target,
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false) { }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &src)
 	: AForm("PresidentialPardonForm", src.getTarget(), src.getGradeToSign(),

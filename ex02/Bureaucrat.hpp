@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:55:57 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 03:22:42 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 03:42:23 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
 		void decrementGrade();
 		std::string getName() const;
 		void signForm(AForm &form);
-		void executeForm(AForm const & form);
+		void executeForm(AForm const & f);
 
 		class GradeTooHighException : public std::exception
 		{

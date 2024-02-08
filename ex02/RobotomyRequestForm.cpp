@@ -6,20 +6,22 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 02:30:04 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 03:46:22 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:21:36 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void) :
-	AForm("RobotomyRequestForm", "Unknown target", 72, 45, false)
+	AForm("RobotomyRequestForm", "Unknown target",
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false)
 {
 	srand(time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-	AForm("RobotomyRequestForm", target, 72, 45, false)
+	AForm("RobotomyRequestForm", target,
+		MIN_SIGN_GRADE, MIN_EXEC_GRADE, false)
 {
 	srand(time(NULL));
 }

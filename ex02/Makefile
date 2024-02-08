@@ -25,6 +25,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) *_shrubbery
 
 leaks: $(NAME)
 	valgrind --leak-check=full ./$(NAME)

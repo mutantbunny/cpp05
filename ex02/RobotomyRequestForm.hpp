@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 00:50:18 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 02:41:13 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 02:20:56 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm &operator=(RobotomyRequestForm &src);
 
 		virtual void execute(Bureaucrat const &executor) const;
+
+		static const int MIN_SIGN_GRADE = 72;
+		static const int MIN_EXEC_GRADE = 45;
 };
 
 #endif

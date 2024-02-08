@@ -6,157 +6,109 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:56:00 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 00:36:28 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/08 03:50:05 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
+static void run_test(AForm &form, Bureaucrat &buro, int test_num)
+{
+	try
+	{
+		std::cout << "\n*** Run Test #" << test_num << " ***\n\nBureaucrat: "
+			<< buro << "\nForm: " << form << "\nExecute Form:" << std::endl;
+		buro.executeForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Exception while executing " << form.getName() << ": "
+			<< e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << "Sign form:" << std::endl;
+		buro.signForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Exception while signing " << form.getName() << ": "
+			<< e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << "Execute Form:" << std::endl;
+		buro.executeForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Exception while executing " << form.getName() << ": "
+			<< e.what() << std::endl;
+	}
+
+	std::cout << "\n*** End of test #" << test_num << " ***\n" << std::endl;
+}
 
 int main(void)
 {
-	Form std_form;
-	std::cout << "Created Form: " << std_form << std::endl;
-	std::cout << "\n***\n" << std::endl;
+	int test_num = 0;
+	RobotomyRequestForm rr_form("Bob");
+	PresidentialPardonForm pp_form;
+	ShrubberyCreationForm sc_form("Joe");
 
-	try
+	// RobotomyRequestForm tests
+
+	Bureaucrat rr_buro_1("Ivan", RobotomyRequestForm::MIN_SIGN_GRADE + 1);
+	Bureaucrat rr_buro_2("Vladmir", RobotomyRequestForm::MIN_EXEC_GRADE + 1);
+
+	run_test(rr_form, rr_buro_1, ++test_num);
+	rr_buro_1.incrementGrade();
+	run_test(rr_form, rr_buro_1, ++test_num);
+
+	run_test(rr_form, rr_buro_2, ++test_num);
+	rr_buro_2.incrementGrade();
+	run_test(rr_form, rr_buro_2, ++test_num);
+
+	std::cout << "\n*** Run test #" << ++test_num << " ***\n\nBureaucrat: "
+			<< rr_buro_2 << "\nForm: " << rr_form
+			<< "\nTest randomness of robotomy outcome:\n" << std::endl;
+
+	for (int i = 1; i <= 10; ++i)
 	{
-		Form unnamed_bc(10, 30);
-		std::cout << "Created Form: " << unnamed_bc << std::endl;
+		std::cout << "Execute Robotomy Request Form (run #"
+			<< i << "):" << std::endl;
+		rr_buro_2.executeForm(rr_form);
+		std::cout << std::endl;
 	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create unnamed Form with grade 10 required "
-			<< "to sign and grade 30 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	std::cout << "*** End of test #" << test_num << " ***\n" << std::endl;
 
-	std::cout << "\n***\n" << std::endl;
+	// PresidentialPardonForm tests
 
-	try
-	{
-		Form a1("A1", 50, 90);
-		std::cout << "Created Form: " << a1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create Form A1 with grade 50 required "
-			<< "to sign and grade 90 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	Bureaucrat pp_buro_1("Boris", PresidentialPardonForm::MIN_SIGN_GRADE + 1);
+	Bureaucrat pp_buro_2("Katya", PresidentialPardonForm::MIN_EXEC_GRADE + 1);
 
-	std::cout << "\n***\n" << std::endl;
+	run_test(pp_form, pp_buro_1, ++test_num);
+	pp_buro_1.incrementGrade();
+	run_test(pp_form, pp_buro_1, ++test_num);
 
-	try
-	{
-		Form a1("B2", 0, 90);
-		std::cout << "Created Form: " << a1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create Form B2 with grade 0 required "
-			<< "to sign and grade 90 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	run_test(pp_form, pp_buro_2, ++test_num);
+	pp_buro_1.incrementGrade();
+	run_test(pp_form, pp_buro_2, ++test_num);
 
-	std::cout << "\n***\n" << std::endl;
+	// PresidentialPardonForm tests
 
-	try
-	{
-		Form a1("C3", 150, 0);
-		std::cout << "Created Form: " << a1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create Form C3 with grade 150 required "
-			<< "to sign and grade 0 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-	std::cout << "\n***\n" << std::endl;
+	Bureaucrat sc_buro_1("Martina", ShrubberyCreationForm::MIN_SIGN_GRADE + 1);
+	Bureaucrat sc_buro_2("Oleg", ShrubberyCreationForm::MIN_EXEC_GRADE + 1);
 
-	try
-	{
-		Form a1("D4", 151, 1);
-		std::cout << "Created Form: " << a1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create Form D4 with grade 151 required "
-			<< "to sign and grade 1 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	run_test(sc_form, sc_buro_1, ++test_num);
+	sc_buro_1.incrementGrade();
+	run_test(sc_form, sc_buro_1, ++test_num);
 
-	std::cout << "\n***\n" << std::endl;
-
-	try
-	{
-		Form a1("E5", 1, 151);
-		std::cout << "Created Form: " << a1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to create Form E5 with grade 1 required "
-			<< "to sign and grade 151 required to execute."
-			<< std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n***\n" << std::endl;
-
-	try
-	{
-		Form f6("F6", 30, 40);
-		std::cout << "Created Form: " << f6 << std::endl;
-		f6 = std_form;
-		std::cout << "Copied unnamed form grades and signature status to f6. "
-			<< "New status of F6: " << f6 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Failed to copy unnamed form grades and "
-			<< "signature status to F6." << std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-
-	std::cout << "\n***\n" << std::endl;
-
-	Bureaucrat mario("Mario", 50);
-	Form g7("G7", 49, 10);
-	Form h8("H8", 50, 20);
-
-	std::cout << "Before signing forms:" << std::endl;
-	std::cout << "Created Bureaucrat: " << mario << std::endl;
-	std::cout << "Created Form: " << g7 << std::endl;
-	std::cout << "Created Form: " << h8 << std::endl;
-
-	try
-	{
-		mario.signForm(g7);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Bureucrat Mario failed to sign form G7." << std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		mario.signForm(h8);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Bureucrat Mario failed to sign form H8." << std::endl;
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "\nAfter signing forms:" << std::endl;
-	std::cout << "Status of Form G7: " << g7 << std::endl;
-	std::cout << "Status of Form H8: " << h8 << std::endl;
-
-	std::cout << "\n***\n" << std::endl;
+	run_test(sc_form, sc_buro_2, ++test_num);
+	sc_buro_2.incrementGrade();
+	run_test(sc_form, sc_buro_2, ++test_num);
 }
