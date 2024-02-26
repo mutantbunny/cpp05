@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 02:01:34 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 00:35:33 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 01:19:10 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,37 +84,9 @@ void Form::beSigned(Bureaucrat &b)
 
 std::string Form::getName() const { return m_name; }
 
-Form::GradeTooHighException::GradeTooHighException(void) { }
-
-Form::GradeTooHighException::
-	GradeTooHighException(const GradeTooHighException &src) { (void)src; }
-
-Form::GradeTooHighException::~GradeTooHighException(void) throw () { }
-
-Form::GradeTooHighException &Form::GradeTooHighException::
-	operator=(const GradeTooHighException &src)
-{
-	(void)src;
-	return *this;
-}
-
 const char *Form::GradeTooHighException::what() const throw()
 {
 	return "grade is too high!";
-}
-
-Form::GradeTooLowException::GradeTooLowException(void) { }
-
-Form::GradeTooLowException::
-	GradeTooLowException(const GradeTooLowException &src) { (void)src; }
-
-Form::GradeTooLowException::~GradeTooLowException(void) throw () { }
-
-Form::GradeTooLowException &Form::GradeTooLowException::
-	operator=(const GradeTooLowException &src)
-{
-	(void)src;
-	return *this;
 }
 
 const char *Form::GradeTooLowException::what() const throw()

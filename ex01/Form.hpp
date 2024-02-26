@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 02:01:32 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/06 03:13:15 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 01:19:31 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,12 @@ class Form
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				GradeTooHighException(void);
-				GradeTooHighException(const GradeTooHighException &src);
-				virtual ~GradeTooHighException(void) throw ();
-				GradeTooHighException
-					&operator=(const GradeTooHighException &src);
 				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				GradeTooLowException(void);
-				GradeTooLowException(const GradeTooLowException &src);
-				virtual ~GradeTooLowException(void) throw ();
-				GradeTooLowException
-					&operator=(const GradeTooLowException &src);
 				virtual const char *what() const throw();
 		};
 };

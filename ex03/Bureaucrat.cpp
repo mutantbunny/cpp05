@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:55:53 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 03:42:42 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 01:17:37 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,37 +104,9 @@ void Bureaucrat::executeForm(AForm const & form)
 	}
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(void) { }
-
-Bureaucrat::GradeTooHighException::
-	GradeTooHighException(const GradeTooHighException &src) { (void)src; }
-
-Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw () { }
-
-Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::
-	operator=(const GradeTooHighException &src)
-{
-	(void)src;
-	return *this;
-}
-
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "Grade is too high!";
-}
-
-Bureaucrat::GradeTooLowException::GradeTooLowException(void) { }
-
-Bureaucrat::GradeTooLowException::
-	GradeTooLowException(const GradeTooLowException &src) { (void)src; }
-
-Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw () { }
-
-Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::
-	operator=(const GradeTooLowException &src)
-{
-	(void)src;
-	return *this;
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

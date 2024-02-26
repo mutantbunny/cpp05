@@ -54,33 +54,18 @@ class AForm
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				GradeTooHighException(void);
-				GradeTooHighException(const GradeTooHighException &src);
-				virtual ~GradeTooHighException(void) throw ();
-				GradeTooHighException
-					&operator=(const GradeTooHighException &src);
 				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				GradeTooLowException(void);
-				GradeTooLowException(const GradeTooLowException &src);
-				virtual ~GradeTooLowException(void) throw ();
-				GradeTooLowException
-					&operator=(const GradeTooLowException &src);
 				virtual const char *what() const throw();
 		};
 
 		class FormNotSignedException : public std::exception
 		{
 			public:
-				FormNotSignedException(void);
-				FormNotSignedException(const FormNotSignedException &src);
-				virtual ~FormNotSignedException(void) throw ();
-				FormNotSignedException
-					&operator=(const FormNotSignedException &src);
 				virtual const char *what() const throw();
 		};
 };

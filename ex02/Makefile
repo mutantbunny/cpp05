@@ -22,10 +22,10 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
+	$(RM) *_shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) *_shrubbery
 
 leaks: $(NAME)
 	valgrind --leak-check=full ./$(NAME)

@@ -98,56 +98,14 @@ void AForm::beSigned(Bureaucrat &b)
 	m_is_signed = true;
 }
 
-AForm::GradeTooHighException::GradeTooHighException(void) { }
-
-AForm::GradeTooHighException::
-	GradeTooHighException(const GradeTooHighException &src) { (void)src; }
-
-AForm::GradeTooHighException::~GradeTooHighException(void) throw () { }
-
-AForm::GradeTooHighException &AForm::GradeTooHighException::
-	operator=(const GradeTooHighException &src)
-{
-	(void)src;
-	return *this;
-}
-
 const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "grade is too high!";
 }
 
-AForm::GradeTooLowException::GradeTooLowException(void) { }
-
-AForm::GradeTooLowException::
-	GradeTooLowException(const GradeTooLowException &src) { (void)src; }
-
-AForm::GradeTooLowException::~GradeTooLowException(void) throw () { }
-
-AForm::GradeTooLowException &AForm::GradeTooLowException::
-	operator=(const GradeTooLowException &src)
-{
-	(void)src;
-	return *this;
-}
-
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "grade is too low!";
-}
-
-AForm::FormNotSignedException::FormNotSignedException(void) { }
-
-AForm::FormNotSignedException::
-	FormNotSignedException(const FormNotSignedException &src) { (void)src; }
-
-AForm::FormNotSignedException::~FormNotSignedException(void) throw () { }
-
-AForm::FormNotSignedException &AForm::FormNotSignedException::
-	operator=(const FormNotSignedException &src)
-{
-	(void)src;
-	return *this;
 }
 
 const char *AForm::FormNotSignedException::what() const throw()
