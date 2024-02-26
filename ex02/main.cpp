@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:56:00 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 03:50:05 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:03:43 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(void)
 	int test_num = 0;
 	RobotomyRequestForm rr_form("Bob");
 	PresidentialPardonForm pp_form;
-	ShrubberyCreationForm sc_form("Joe");
+	ShrubberyCreationForm sc_form("Home");
 
 	// RobotomyRequestForm tests
 

@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 02:01:32 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/26 01:19:31 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 19:36:42 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Form
 {
 	private:
-		int m_grade_to_sign;
-		int m_grade_to_execute;
+		const int m_grade_to_sign;
+		const int m_grade_to_execute;
 		bool m_is_signed;
 		const std::string m_name;
 

@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 04:01:12 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 04:35:48 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:11:05 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_form_type
 class Intern
 {
 	private:
-		static const t_form_type VALID_FORMS[3];
 		static const int NUM_VALID_FORMS = 3;
+		static const t_form_type VALID_FORMS[NUM_VALID_FORMS];
 
 	public:
 		Intern(void);

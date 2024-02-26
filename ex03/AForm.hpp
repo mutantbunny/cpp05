@@ -19,15 +19,13 @@
 class AForm
 {
 	private:
-		int m_grade_to_sign;
-		int m_grade_to_execute;
+		const int m_grade_to_sign;
+		const int m_grade_to_execute;
 		bool m_is_signed;
 		std::string m_target;
 		const std::string m_name;
 
 	protected:
-		void setGradeToSign(int new_grade);
-		void setGradeToExecute(int new_grade);
 		void setIsSigned(bool new_is_signed);
 		void setTarget(std::string new_target);
 

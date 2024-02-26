@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 02:30:04 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 02:21:36 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:06:39 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ RobotomyRequestForm
 		return *this;
 
 	setTarget(src.getTarget());
-	setGradeToSign(src.getGradeToSign());
-	setGradeToExecute(src.getGradeToExecute());
 	setIsSigned(src.getIsSigned());
 
 	return *this;

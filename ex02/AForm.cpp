@@ -15,42 +15,36 @@
 AForm::AForm(void) : m_grade_to_sign(150), m_grade_to_execute(1),
 	m_is_signed(false), m_target("Unknown target"), m_name("Unnamed") { }
 
-AForm::AForm(int grade_to_sign, int grade_to_execute) : m_is_signed(false),
-m_target("Unknown target"), m_name("Unnamed")
+AForm::AForm(int grade_to_sign, int grade_to_execute) :
+	m_grade_to_sign(grade_to_sign), m_grade_to_execute(grade_to_execute),
+	m_is_signed(false), m_target("Unknown target"), m_name("Unnamed")
 {
 	if (grade_to_sign > 150 || grade_to_execute > 150)
 		throw AForm::GradeTooLowException();
 	else if (grade_to_sign < 1 || grade_to_execute < 1)
 		throw AForm::GradeTooHighException();
-
-	m_grade_to_sign = grade_to_sign;
-	m_grade_to_execute = grade_to_execute;
 }
 
 AForm::AForm(std::string name, std::string target, int grade_to_sign,
-	int grade_to_execute, bool is_signed) : m_is_signed(is_signed),
-		m_target(target), m_name(name)
+	int grade_to_execute, bool is_signed) :
+		m_grade_to_sign(grade_to_sign), m_grade_to_execute(grade_to_execute),
+		m_is_signed(is_signed), m_target(target), m_name(name)
 {
 	if (grade_to_sign > 150 || grade_to_execute > 150)
 		throw AForm::GradeTooLowException();
 	else if (grade_to_sign < 1 || grade_to_execute < 1)
 		throw AForm::GradeTooHighException();
-
-	m_grade_to_sign = grade_to_sign;
-	m_grade_to_execute = grade_to_execute;
-
 }
 
-AForm::AForm(AForm &src) : m_is_signed(src.m_is_signed), m_target(src.m_target),
-		m_name(src.m_name)
+AForm::AForm(AForm &src) :
+	m_grade_to_sign(src.m_grade_to_sign),
+	m_grade_to_execute(src.m_grade_to_execute),
+	m_is_signed(src.m_is_signed), m_target(src.m_target), m_name(src.m_name)
 {
 	if (src.m_grade_to_sign > 150 || src.m_grade_to_execute > 150)
 		throw AForm::GradeTooLowException();
 	else if (src.m_grade_to_sign < 1 || src.m_grade_to_execute < 1)
 		throw AForm::GradeTooHighException();
-
-	m_grade_to_sign = src.m_grade_to_sign;
-	m_grade_to_execute = src.m_grade_to_execute;
 }
 
 AForm::~AForm(void) { }
@@ -60,22 +54,10 @@ AForm &AForm::operator=(AForm &src)
 	if (this == &src)
 		return *this;
 
-	if (src.m_grade_to_sign > 150 || src.m_grade_to_execute > 150)
-		throw AForm::GradeTooLowException();
-	else if (src.m_grade_to_sign < 1 || src.m_grade_to_execute < 1)
-		throw AForm::GradeTooHighException();
-
-	m_grade_to_sign = src.m_grade_to_sign;
-	m_grade_to_execute = src.m_grade_to_execute;
 	m_is_signed = src.m_is_signed;
 	m_target = src.m_target;
-
 	return *this;
 }
-
-void AForm::setGradeToSign(int new_grade) { m_grade_to_sign = new_grade; }
-
-void AForm::setGradeToExecute(int new_grade) { m_grade_to_execute = new_grade; }
 
 void AForm::setIsSigned(bool new_is_signed) { m_is_signed = new_is_signed; }
 

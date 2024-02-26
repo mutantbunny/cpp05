@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 04:12:01 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 04:53:18 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:12:19 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static AForm *create_sc_form(std::string target)
 	return new ShrubberyCreationForm(target);
 }
 
-const t_form_type Intern::VALID_FORMS[3] =
+const t_form_type Intern::VALID_FORMS[NUM_VALID_FORMS] =
 		{
 			{ .form_name = "presidential pardon", .create_fn = create_pp_form},
 			{ .form_name = "robotomy request", .create_fn = create_rr_form},

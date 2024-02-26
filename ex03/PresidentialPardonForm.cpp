@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 01:21:01 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 02:18:23 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 19:59:54 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ PresidentialPardonForm
 		return *this;
 
 	setTarget(src.getTarget());
-	setGradeToSign(src.getGradeToSign());
-	setGradeToExecute(src.getGradeToExecute());
 	setIsSigned(src.getIsSigned());
 
 	return *this;

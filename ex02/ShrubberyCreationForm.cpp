@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 03:00:09 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/08 02:23:28 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:06:47 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ ShrubberyCreationForm
 		return *this;
 
 	setTarget(src.getTarget());
-	setGradeToSign(src.getGradeToSign());
-	setGradeToExecute(src.getGradeToExecute());
 	setIsSigned(src.getIsSigned());
 
 	return *this;

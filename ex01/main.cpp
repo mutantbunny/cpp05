@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:56:00 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/07 00:36:28 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/26 19:31:10 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,13 +112,13 @@ int main(void)
 		Form f6("F6", 30, 40);
 		std::cout << "Created Form: " << f6 << std::endl;
 		f6 = std_form;
-		std::cout << "Copied unnamed form grades and signature status to f6. "
+		std::cout << "Copied signature status to f6. "
 			<< "New status of F6: " << f6 << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Failed to copy unnamed form grades and "
-			<< "signature status to F6." << std::endl;
+		std::cerr << "Failed to copy unnamed signature status to F6."
+			<< std::endl;
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
